@@ -15,7 +15,6 @@ if($_SESSION['auth'])
   $insert = "INSERT INTO cart (user_id, item_id, count) VALUES ($_SESSION[user_id], $item_id, 1)";
   mysqli_query($cuber, $insert);
   $_SESSION[$post_key] = true;
-  //$_SESSION['count' . $item_id] = 1;
   header("Location: ../Catalog/catalog.php");
 }
 else
