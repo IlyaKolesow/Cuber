@@ -1,0 +1,12 @@
+.desc__button {
+    background: #000000;
+    border-radius: 31px;
+    width: 157px;
+    height: 63px;
+    margin: auto;
+    cursor: pointer;
+}
+.desc__button:hover {
+    background: rgb(66, 66, 66);
+    transition: .25s all linear;
+}

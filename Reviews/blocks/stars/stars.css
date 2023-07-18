@@ -1,0 +1,11 @@
+.stars {
+    display: flex;
+    width: 170px;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+@media(max-width:900px) {
+    .stars {
+        width: 145px;
+    }
+}

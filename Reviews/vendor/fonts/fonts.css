@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Gugi';  /* �������� ������ */
+  src: url('./Gugi-Regular.ttf') format('truetype'), /* ���� � ������������ ������ */
+       url('./') format('woff');
+  font-weight: 400; /* ������� ������ */
+  font-style: normal; /* ����� ������ */
+  font-display: swap; /* ����������� ������ */
+}

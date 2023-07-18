@@ -1,0 +1,15 @@
+.title {
+    font-family: 'Gugi';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 60px;
+    color: #000000;
+    margin-top: 140px;
+    margin-bottom: 32px;
+}
+@media(max-width:900px) {
+    .title {
+        font-size: 40px;
+    }
+}

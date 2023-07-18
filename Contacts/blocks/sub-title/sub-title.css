@@ -1,0 +1,15 @@
+.sub-title {
+    font-family: 'Gugi';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    color: #000000;
+    margin-top: 90px;
+    margin-bottom: 32px;
+}
+@media(max-width:900px) {
+    .sub-title {
+        font-size: 26px;
+    }
+}

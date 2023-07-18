@@ -1,0 +1,9 @@
+.desc__delivery {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+    margin: auto;
+    height: 26px;
+    margin-bottom: 36px;
+}

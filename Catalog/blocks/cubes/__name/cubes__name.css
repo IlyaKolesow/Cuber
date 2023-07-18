@@ -1,0 +1,15 @@
+.name {
+    font-family: 'Gugi';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: #393939;
+    margin: auto;
+    width: 80%;
+}
+.name:hover {
+    color: #999999;
+    transition: .25s all linear;
+    text-decoration: underline;
+}

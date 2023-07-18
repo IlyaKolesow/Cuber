@@ -1,0 +1,20 @@
+.header__img {
+  background: linear-gradient(to bottom, transparent 80%, rgb(248, 248, 248) 100%),
+            0% 0% / 100% url("../../../images/header/__img.png") no-repeat;
+  height: 460px;
+}
+@media(max-width:1000px) {
+  .header__img {
+    height: 400px;
+  }
+}
+@media (max-width:800px) {
+  .header__img {
+    height: 300px;
+  }
+}
+@media (max-width:600px) {
+  .header__img {
+    height: 280px;
+  }
+}

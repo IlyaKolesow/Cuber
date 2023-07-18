@@ -1,0 +1,18 @@
+.catalog {
+    margin: auto;
+    margin-top: 170px;
+    justify-items: center;
+    width: 75%;
+}
+
+@media (max-width:1180px) {
+  .catalog {
+      width: 90%;
+  }
+}
+
+@media (max-width:500px) {
+  .catalog {
+    margin-top: 50px;
+  }
+}

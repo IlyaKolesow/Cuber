@@ -1,0 +1,9 @@
+.about__text {
+    display: flex;
+    justify-content: space-between;
+}
+@media(max-width:1000px) {
+    .about__text {
+        display: block;
+    }
+}

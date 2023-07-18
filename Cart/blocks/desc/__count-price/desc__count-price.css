@@ -1,0 +1,10 @@
+.desc__count-price {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+    margin: auto;
+    height: 26px;
+    margin-bottom: 34px;
+    padding-top: 28px;
+}

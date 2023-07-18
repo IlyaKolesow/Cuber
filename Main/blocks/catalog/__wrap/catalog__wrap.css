@@ -1,0 +1,20 @@
+.catalog__wrap {
+    display: grid;
+    grid-template-areas:
+    "A B C";
+    justify-content: space-between;
+}
+
+@media(max-width:800px) {
+  .catalog__wrap {
+    grid-template-areas:
+    "A B"
+    "C C";
+  }
+}
+
+@media(max-width: 525px) {
+  .catalog__wrap {
+    display: block;
+  }
+}

@@ -1,0 +1,120 @@
+.auth-popup,
+.reg-popup,
+.exit-form,
+.auth-to-add {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #585858;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.auth-to-add {
+  display: block;
+  background-color: #8b8b8b;
+}
+
+.auth-to-add-text {
+  font-family: Gugi;
+}
+
+.close-btn {
+  position: absolute;
+  top: -2px;
+  right: 5px;
+  font-size: 23px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  background-color: #cfcfcf;
+  border-radius: 4px;
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 14px;
+  color: #333;
+}
+
+input[type="submit"],
+.exit-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.add {
+  width: 40%;
+  margin-left: 10%;
+  margin-top: 10px;
+}
+
+.exit-btn {
+  margin: 0;
+}
+
+input[type="submit"]:hover {
+  background: rgb(37, 37, 37);
+  transition: .25s all linear;
+}
+
+.prompt {
+  display: inline-block;
+  color: #d2d2d2;
+  text-decoration: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top: 7px;
+}
+
+.wrong_password,
+.already_registered {
+  color: #ff9797;
+  margin-bottom: 10px;
+  margin-top: 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+input,
+.exit-btn {
+  font-family: Arial, sans-serif;
+}
+
+input::placeholder {
+  color: #393939;
+}
+
+.auth-popup:target,
+.reg-popup:target,
+.exit-form:target {
+  display: block;
+}
+
+.text-logged {
+  font-family: 'Gugi';
+  font-size: 18px;
+  color: black;
+}
+
+span {
+  color: white;
+}
+
+form {
+  margin: 0;
+}

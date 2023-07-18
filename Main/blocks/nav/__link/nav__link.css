@@ -1,0 +1,26 @@
+.nav__link {
+  color: #fff;
+  font-family: 'Gugi';
+  font-size: 24px;
+  line-height: 40px;
+  text-decoration: none;
+}
+.nav__sign-in {
+  color: yellow;
+}
+
+.nav__link:hover {
+    color: #999999;
+    transition: .25s all linear;
+    text-decoration: underline;
+}
+@media(max-width:600px) {
+  .nav__link {
+    font-size: 20px;
+  }
+}
+@media(max-width:480px) {
+  .nav__link {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,36 @@
+@import '../vendor/normalize.css';
+@import '../vendor/variables.css';
+@import '../vendor/fonts/fonts.css';
+/* Blocks */
+@import '../blocks/page/page.css';
+/* Header */
+@import '../blocks/header/header.css';
+@import '../blocks/header/__img/header__img.css';
+@import '../blocks/header/__main-title/header__main-title.css';
+@import '../blocks/header/__second-title/header__second-title.css';
+/* Nav */
+@import '../blocks/nav/nav.css';
+@import '../blocks/nav/__list/nav__list.css';
+@import '../blocks/nav/__item/nav__item.css';
+@import '../blocks/nav/__logo/nav__logo.css';
+@import '../blocks/nav/__link/nav__link.css';
+/* Main */
+@import '../blocks/main/main.css';
+/* About */
+@import '../blocks/about/__title/about__title.css';
+@import '../blocks/about/__first-text/about__first-text.css';
+@import '../blocks/about/__second-text/about__second-text.css';
+@import '../blocks/about/about.css';
+@import '../blocks/about/__text/about__text.css';
+/* Catalog */
+@import '../blocks/catalog/__title/catalog__title.css';
+@import '../blocks/catalog/catalog.css';
+@import '../blocks/catalog/__text/catalog__text.css';
+@import '../blocks/catalog/__wrap/catalog__wrap.css';
+@import '../blocks/catalog/__item/catalog__item.css';
+/* Footer */
+@import '../blocks/footer/footer.css';
+@import '../blocks/footer/__icons/footer__icons.css';
+@import '../blocks/footer/__text/footer__text.css';
+/* Forms */
+@import '../../forms.css';

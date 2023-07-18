@@ -1,0 +1,9 @@
+.about {
+    width: 75%;
+    margin: auto;
+}
+@media (max-width:1180px) {
+    .about {
+        width: 90%;
+    }
+}

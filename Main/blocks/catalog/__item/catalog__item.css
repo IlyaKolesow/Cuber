@@ -1,0 +1,23 @@
+.catalog__item {
+  justify-self: center;
+  cursor: pointer;
+  text-align: center;
+}
+
+.cube {
+  grid-area: A;
+}
+.pyraminx {
+  grid-area: B;
+}
+.megaminx {
+  grid-area: C;
+}
+.catalog__item:hover {
+  text-decoration: underline;
+}
+@media (max-width: 500px) {
+  .catalog__item {
+    margin-top: 60px;
+  }
+}

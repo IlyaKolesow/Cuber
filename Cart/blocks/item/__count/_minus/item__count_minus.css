@@ -1,0 +1,10 @@
+.item__count_minus {
+    font-family: 'Gugi';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: #000000;
+    margin-left: 10px;
+    text-decoration: none;
+}

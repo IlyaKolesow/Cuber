@@ -1,0 +1,20 @@
+.catalog__title {
+    font-family: 'Gugi';
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 60px;
+    margin: 0;
+    margin-bottom: 100px;
+}
+
+@media (max-width: 500px) {
+    .catalog__title {
+        margin-bottom: 0px;
+    }
+}
+@media(max-width:600px)
+{
+  .catalog__title {
+    font-size: 36px;
+  }
+}

@@ -1,0 +1,16 @@
+.header__second-title {
+  font-family: 'Gugi';
+  color: #AEAEAE;
+  font-size: 20px;
+  margin: 0;
+  font-weight: 400;
+  line-height: 25px;
+  padding-top: 3px;
+  padding-left: 30%;
+}
+@media(max-width:600px) {
+  .header__second-title {
+    font-size: 16px;
+    padding-top: 0;
+  }
+}

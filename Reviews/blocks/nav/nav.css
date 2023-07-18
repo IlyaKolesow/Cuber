@@ -1,0 +1,14 @@
+.nav {
+  background: black;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 11% 0 3%;
+}
+
+@media (max-width:1000px) {
+  .nav {
+    padding: 0 3% 0 3%;
+  }
+}

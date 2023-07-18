@@ -1,0 +1,14 @@
+.buyer {
+    font-family: 'Gugi';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: #393939;
+    margin-top: 65px;
+    margin-bottom: 0;
+}
+@media (max-width:900px) {
+    .buyer {
+        font-size: 20px;
+    }
+}

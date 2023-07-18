@@ -1,0 +1,29 @@
+@import '../vendor/normalize.css';
+@import '../vendor/variables.css';
+@import '../vendor/fonts/fonts.css';
+/* Blocks */
+@import '../blocks/page/page.css';
+/* Nav */
+@import '../blocks/nav/nav.css';
+@import '../blocks/nav/__list/nav__list.css';
+@import '../blocks/nav/__item/nav__item.css';
+@import '../blocks/nav/__logo/nav__logo.css';
+@import '../blocks/nav/__link/nav__link.css';
+@import '../blocks/nav/__current/nav__current.css';
+/* Title */
+@import '../blocks/title/title.css';
+/* Buyer */
+@import '../blocks/buyer/buyer.css';
+/* Stars */
+@import '../blocks/stars/stars.css';
+@import '../blocks/star/star.css';
+/* Comment */
+@import '../blocks/comment/comment.css';
+/* Main */
+@import '../blocks/main/main.css';
+/* Footer */
+@import '../blocks/footer/footer.css';
+@import '../blocks/footer/__icons/footer__icons.css';
+@import '../blocks/footer/__text/footer__text.css';
+/* Forms */
+@import '../../forms.css';

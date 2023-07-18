@@ -1,0 +1,35 @@
+@import '../vendor/normalize.css';
+@import '../vendor/variables.css';
+@import '../vendor/fonts/fonts.css';
+/* Blocks */
+@import '../blocks/page/page.css';
+/* Nav */
+@import '../blocks/nav/nav.css';
+@import '../blocks/nav/__list/nav__list.css';
+@import '../blocks/nav/__item/nav__item.css';
+@import '../blocks/nav/__logo/nav__logo.css';
+@import '../blocks/nav/__link/nav__link.css';
+@import '../blocks/nav/__current/nav__current.css';
+/* Title */
+@import '../blocks/title/title.css';
+/* Sub-title */
+@import '../blocks/sub-title/sub-title.css';
+/* Cubes */
+@import '../blocks/cubes/cubes.css';
+@import '../blocks/cubes/__name/cubes__name.css';
+@import '../blocks/cubes/__price/cubes__price.css';
+/* Pyraminxes */
+@import '../blocks/pyraminxes/pyraminxes.css';
+/* Megaminxes */
+@import '../blocks/megaminxes/megaminxes.css';
+/* Main */
+@import '../blocks/main/main.css';
+@import '../blocks/main/item.css';
+/* Footer */
+@import '../blocks/footer/footer.css';
+@import '../blocks/footer/__icons/footer__icons.css';
+@import '../blocks/footer/__text/footer__text.css';
+/* Forms */
+@import '../../forms.css';
+/* Add buttons */
+@import '../blocks/add-to-cart/add-to-cart.css';

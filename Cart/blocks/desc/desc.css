@@ -1,0 +1,12 @@
+.desc {
+    background: #DBDBDB;
+    border-radius: 25px;
+    width: 328px;
+    height: 519px;
+}
+@media(max-width:1150px) {
+    .desc {
+        margin: auto;
+        width: 80%;
+    }
+}

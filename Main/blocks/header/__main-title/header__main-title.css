@@ -1,0 +1,22 @@
+.header__main-title {
+  margin: 0;
+  padding-top: 30px;
+  padding-left: 10%;
+  font-family: 'Imprint MT Shadow';
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 400;
+  color: #fff;
+}
+@media(max-width:800px) {
+  .header__main-title {
+    font-size: 80px;
+    padding-top: 20px;
+  }
+}
+@media(max-width:600px) {
+  .header__main-title {
+    padding-top: 0;
+    font-size: 64px;
+  }
+}

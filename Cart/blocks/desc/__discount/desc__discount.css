@@ -1,0 +1,9 @@
+.desc__discount {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    height: 26px;
+    align-items: center;
+    margin-bottom: 6px;
+}

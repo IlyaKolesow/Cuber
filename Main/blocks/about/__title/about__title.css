@@ -1,0 +1,14 @@
+.about__title {
+    color: black;
+    font-family: 'Gugi';
+    font-size: 48px;
+    font-weight: 400;
+    margin-top: 74px;
+    margin-bottom: 30px;
+}
+@media(max-width:600px)
+{
+  .about__title {
+    font-size: 36px;
+  }
+}

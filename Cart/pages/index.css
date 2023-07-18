@@ -1,0 +1,51 @@
+@import '../vendor/normalize.css';
+@import '../vendor/variables.css';
+@import '../vendor/fonts/fonts.css';
+/* Blocks */
+@import '../blocks/page/page.css';
+/* Nav */
+@import '../blocks/nav/nav.css';
+@import '../blocks/nav/__list/nav__list.css';
+@import '../blocks/nav/__item/nav__item.css';
+@import '../blocks/nav/__logo/nav__logo.css';
+@import '../blocks/nav/__link/nav__link.css';
+@import '../blocks/nav/__current/nav__current.css';
+/* Title */
+@import '../blocks/title/title.css';
+/* Item */
+@import '../blocks/item/item.css';
+@import '../blocks/item/__count/item__count.css';
+@import '../blocks/item/__count/_minus/item__count_minus.css';
+@import '../blocks/item/__count/_plus/item__count_plus.css';
+@import '../blocks/item/__count/_number/item__count_number.css';
+@import '../blocks/item/__name-price/item__name-price.css';
+@import '../blocks/item/__name-price/_name/item__name-price_name.css';
+@import '../blocks/item/__name-price/_price/item__name-price_price.css';
+@import '../blocks/item/__img/item__img.css';
+/* Desc */
+@import '../blocks/desc/desc.css';
+@import '../blocks/desc/__address-title/desc__address-title.css';
+@import '../blocks/desc/__address-value/desc__address-value.css';
+@import '../blocks/desc/__button/desc__button.css';
+@import '../blocks/desc/__button/_text/desc__button_text.css';
+@import '../blocks/desc/__count-price/desc__count-price.css';
+@import '../blocks/desc/__count-price/_count/desc__count-price_count.css';
+@import '../blocks/desc/__count-price/_price/desc__count-price_price.css';
+@import '../blocks/desc/__discount/desc__discount.css';
+@import '../blocks/desc/__discount/_value/desc__discount_value.css';
+@import '../blocks/desc/__discount/_title/desc__discount_title.css';
+@import '../blocks/desc/__payment/desc__payment.css';
+@import '../blocks/desc/__total/desc__total.css';
+@import '../blocks/desc/__delivery/desc__delivery.css';
+@import '../blocks/desc/__delivery/_title/desc__delivery_title.css';
+@import '../blocks/desc/__delivery/_value/desc__delivery_value.css';
+/* Main */
+@import '../blocks/main/main.css';
+/* Cart */
+@import '../blocks/cart/cart.css';
+/* Footer */
+@import '../blocks/footer/footer.css';
+@import '../blocks/footer/__icons/footer__icons.css';
+@import '../blocks/footer/__text/footer__text.css';
+/* Forms */
+@import '../../forms.css';
