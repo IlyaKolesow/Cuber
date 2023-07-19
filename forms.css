@@ -15,7 +15,6 @@
 }
 
 .auth-to-add {
-  display: block;
   background-color: #8b8b8b;
 }
 
@@ -101,7 +100,8 @@ input::placeholder {
 
 .auth-popup:target,
 .reg-popup:target,
-.exit-form:target {
+.exit-form:target,
+.auth-to-add:target {
   display: block;
 }
 

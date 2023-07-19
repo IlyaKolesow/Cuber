@@ -19,6 +19,6 @@ if($_SESSION['auth'])
 }
 else
 {
-  header("Location: ../Catalog/catalog.php?message=auth-to-add");
+  header("Location: ../Catalog/catalog.php#auth-to-add");
 }
 ?>

@@ -57,12 +57,10 @@ include('../Backend/added-items.php');
       </header>
 
       <!-- "auth-to-add" -->
-      <?php if($_GET['message'] == 'auth-to-add'):?>
-        <div class="auth-to-add">
-          <a href="catalog.php" class="close-btn">&times;</a>
-          <p class="auth-to-add-text">You need to register to add items to your shopping cart</p>
-        </div>
-      <?php endif;?>
+      <div class="auth-to-add" id="auth-to-add">
+        <a href="#" class="close-btn">&times;</a>
+        <p class="auth-to-add-text">You need to register to add items to your shopping cart</p>
+      </div>
 
       <main class="main">
         <h1 class="title">Catalog</h1>
