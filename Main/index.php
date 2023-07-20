@@ -1,22 +1,23 @@
-<?php include('../Backend/connect.php');?>
-<?php include('../Backend/forms.php');?>
+<?php include('../Backend/connect.php'); ?>
+<?php include('../Backend/forms.php'); ?>
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css">
-    <link rel="reset" href="./../reset.css">
-    <title>Cuber</title>
-  </head>
 
-  <body class="page">
-    <header class="header">
-      <nav class="nav">
-        <a href="../Main/index.php" class="nav__link">
-          <div class="nav__img">
-            <img class="nav__logo" src="images/favicon/favicon.png" alt="Логотип">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <link rel="reset" href="./../reset.css">
+  <title>Cuber</title>
+</head>
+
+<body class="page">
+  <header class="header">
+    <nav class="nav">
+      <a href="../Main/index.php" class="nav__link">
+        <div class="nav__img">
+          <img class="nav__logo" src="images/favicon/favicon.png" alt="Логотип">
         </div>
       </a>
       <ul class="nav__list">
@@ -45,11 +46,11 @@
         </li>
 
         <li class="nav__item">
-          <?php if($_SESSION['auth']):?>
-            <a href="#exit-form" class="nav__sign-in nav__link"><?php echo "$_SESSION[name]";?></a>
-          <?php else:?>
-            <a href="#auth-popup" class="nav__sign-in nav__link"><?php echo "Sign in";?></a>
-          <?php endif;?>
+          <?php if ($_SESSION['auth']) : ?>
+            <a href="#exit-form" class="nav__sign-in nav__link"><?php echo "$_SESSION[name]"; ?></a>
+          <?php else : ?>
+            <a href="#auth-popup" class="nav__sign-in nav__link"><?php echo "Sign in"; ?></a>
+          <?php endif; ?>
         </li>
       </ul>
     </nav>
@@ -100,6 +101,5 @@
     <p class="footer__text">©CUBER, 2022-<?php echo date('Y'); ?></p>
   </footer>
 </body>
+
 </html>
-
-
