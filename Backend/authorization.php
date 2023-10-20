@@ -3,8 +3,8 @@ include('connect.php');
 
 if(isset($_POST["email"]) && isset($_POST["password"]))
 {
-    $email= trim($_POST["email"]);
-    $pass = trim($_POST["password"]);
+    $email= htmlentities(trim($_POST["email"]));
+    $pass = md5(trim($_POST["password"]));
     $select_id = "SELECT id FROM users WHERE email = '$email'";
     $select_pass = "SELECT pass FROM users WHERE email = '$email'";
     $select_name = "SELECT name FROM users WHERE email = '$email'";

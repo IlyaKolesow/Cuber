@@ -2,9 +2,9 @@
 include('connect.php');
 if (isset($_POST["email"]) && isset($_POST["name"]) && isset($_POST["password"]))
 {
-    $_SESSION['name'] = trim($_POST["name"]);
-    $_SESSION['email'] = trim($_POST["email"]);
-    $_SESSION['pass'] = trim($_POST["password"]);
+    $_SESSION['name'] = htmlentities(trim($_POST["name"]));
+    $_SESSION['email'] = htmlentities(trim($_POST["email"]));
+    $_SESSION['pass'] = md5(trim($_POST["password"]));
     $select = "SELECT id FROM users WHERE email = '$_SESSION[email]'";
     $query = mysqli_query($cuber, $select);
 
