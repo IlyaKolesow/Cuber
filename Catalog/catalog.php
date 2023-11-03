@@ -64,124 +64,75 @@ include('../Backend/added-items.php');
     <p class="auth-to-add-text">You need to register to add items to your shopping cart</p>
   </div>
 
+  <?php
+  $select = "SELECT * FROM items";
+  $result = mysqli_query($cuber, $select);
+  $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
+  ?>
+
   <main class="main">
     <h1 class="title">Catalog</h1>
     <h2 class="sub-title">Cubes</h2>
     <section class="cubes">
-      <div class="cubes__item item">
-        <img src="images/products/cube1.png" alt="cube">
-        <p class="cubes__price price">$79,99</p>
-        <p class="cubes__name name">Gan 13 M Maglev 3x3x3</p>
-        <?php if ($_SESSION['item1']) : ?>
-          <div class="added">Added to cart</div>
-        <?php else : ?>
-          <form action="../Backend/add-to-cart.php" method="post">
-            <input type="submit" class="add" name="item1" value="Add to cart">
-          </form>
-        <?php endif; ?>
-      </div>
-      <div class="cubes__item item">
-        <img src="images/products/cube2.png" alt="cube">
-        <p class="cubes__price price">$17,99</p>
-        <p class="cubes__name name">MoYu 3x3x3 WeiLong</p>
-        <?php if ($_SESSION['item2']) : ?>
-          <div class="added">Added to cart</div>
-        <?php else : ?>
-          <form action="../Backend/add-to-cart.php" method="post">
-            <input type="submit" class="add" name="item2" value="Add to cart">
-          </form>
-        <?php endif; ?>
-      </div>
-      <div class="cubes__item item">
-        <img src="images/products/cube3.png" alt="cube">
-        <p class="cubes__price price">$15,99</p>
-        <p class="cubes__name name">YJ 3x3x3 MGC v2</p>
-        <?php if ($_SESSION['item3']) : ?>
-          <div class="added">Added to cart</div>
-        <?php else : ?>
-          <form action="../Backend/add-to-cart.php" method="post">
-            <input type="submit" class="add" name="item3" value="Add to cart">
-          </form>
-        <?php endif; ?>
-      </div>
+
+      <?php foreach ($result as $row) :
+        if ($row['type'] == "cube") : ?>
+          <div class="cubes__item item">
+            <img src="images/products/item<?php echo $row['id']; ?>.png" alt="cube">
+            <p class="cubes__price price"><?php echo $row['price']; ?></p>
+            <p class="cubes__name name"><?php echo $row['name']; ?></p>
+            <?php if ($_SESSION["item" . $row["id"]]) : ?>
+              <div class="added">Added to cart</div>
+            <?php else : ?>
+              <form action="../Backend/add-to-cart.php" method="post">
+                <input type="submit" class="add" name="item<?php echo $row['id']; ?>" value="Add to cart">
+              </form>
+            <?php endif; ?>
+          </div>
+      <?php endif;
+      endforeach; ?>
     </section>
+
     <h2 class="sub-title">Pyraminxes</h2>
     <section class="pyraminxes">
-      <div class="pyraminxes__item item">
-        <img src="images/products/pyraminx1.png" alt="pyraminx">
-        <p class="pyraminxes__price price">$26,99</p>
-        <p class="pyraminxes__name name">Gan Pyraminx M Enhanced Core</p>
-        <?php if ($_SESSION['item4']) : ?>
-          <div class="added">Added to cart</div>
-        <?php else : ?>
-          <form action="../Backend/add-to-cart.php" method="post">
-            <input type="submit" class="add" name="item4" value="Add to cart">
-          </form>
-        <?php endif; ?>
-      </div>
-      <div class="pyraminxes__item item">
-        <img src="images/products/pyraminx2.png" alt="pyraminx">
-        <p class="pyraminxes__price price">$6,99</p>
-        <p class="pyraminxes__name name">YuXin Pyraminx Little Magic</p>
-        <?php if ($_SESSION['item5']) : ?>
-          <div class="added">Added to cart</div>
-        <?php else : ?>
-          <form action="../Backend/add-to-cart.php" method="post">
-            <input type="submit" class="add" name="item5" value="Add to cart">
-          </form>
-        <?php endif; ?>
-      </div>
-      <div class="pyraminxes__item item">
-        <img src="images/products/pyraminx3.png" alt="pyraminx">
-        <p class="pyraminxes__price price">$12,99</p>
-        <p class="pyraminxes__name name">MoYu Pyraminx Magnetic</p>
-        <?php if ($_SESSION['item6']) : ?>
-          <div class="added">Added to cart</div>
-        <?php else : ?>
-          <form action="../Backend/add-to-cart.php" method="post">
-            <input type="submit" class="add" name="item6" value="Add to cart">
-          </form>
-        <?php endif; ?>
-      </div>
+
+      <?php foreach ($result as $row) :
+        if ($row['type'] == "pyraminx") : ?>
+          <div class="pyraminxes__item item">
+            <img src="images/products/item<?php echo $row['id']; ?>.png" alt="pyraminx">
+            <p class="pyraminxes__price price"><?php echo $row['price']; ?></p>
+            <p class="pyraminxes__name name"><?php echo $row['name']; ?></p>
+            <?php if ($_SESSION["item" . $row["id"]]) : ?>
+              <div class="added">Added to cart</div>
+            <?php else : ?>
+              <form action="../Backend/add-to-cart.php" method="post">
+                <input type="submit" class="add" name="item<?php echo $row['id']; ?>" value="Add to cart">
+              </form>
+            <?php endif; ?>
+          </div>
+      <?php endif;
+      endforeach; ?>
     </section>
+
     <h2 class="sub-title">Megaminxes</h2>
     <section class="megaminxes">
-      <div class="megaminxes__item item">
-        <img src="images/products/megaminx1.png" alt="megaminx">
-        <p class="megaminxes__price price">$49,99</p>
-        <p class="megaminxes__name name">Gan Megaminx</p>
-        <?php if ($_SESSION['item7']) : ?>
-          <div class="added">Added to cart</div>
-        <?php else : ?>
-          <form action="../Backend/add-to-cart.php" method="post">
-            <input type="submit" class="add" name="item7" value="Add to cart">
-          </form>
-        <?php endif; ?>
-      </div>
-      <div class="megaminxes__item item">
-        <img src="images/products/megaminx2.png" alt="megaminx">
-        <p class="megaminxes__price price">$13,99</p>
-        <p class="megaminxes__name name">YuXin Megaminx v2</p>
-        <?php if ($_SESSION['item8']) : ?>
-          <div class="added">Added to cart</div>
-        <?php else : ?>
-          <form action="../Backend/add-to-cart.php" method="post">
-            <input type="submit" class="add" name="item8" value="Add to cart">
-          </form>
-        <?php endif; ?>
-      </div>
-      <div class="megaminxes__item item">
-        <img src="images/products/megaminx3.png" alt="megaminx">
-        <p class="megaminxes__price price">$14,99</p>
-        <p class="megaminxes__name name">Shengshou Megaminx</p>
-        <?php if ($_SESSION['item9']) : ?>
-          <div class="added">Added to cart</div>
-        <?php else : ?>
-          <form action="../Backend/add-to-cart.php" method="post">
-            <input type="submit" class="add" name="item9" value="Add to cart">
-          </form>
-        <?php endif; ?>
-      </div>
+
+      <?php foreach ($result as $row) :
+        if ($row['type'] == "megaminx") : ?>
+          <div class="megaminxes__item item">
+            <img src="images/products/item<?php echo $row['id']; ?>.png" alt="megaminx">
+            <p class="megaminxes__price price"><?php echo $row['price']; ?></p>
+            <p class="megaminxes__name name"><?php echo $row['name']; ?></p>
+            <?php if ($_SESSION["item" . $row["id"]]) : ?>
+              <div class="added">Added to cart</div>
+            <?php else : ?>
+              <form action="../Backend/add-to-cart.php" method="post">
+                <input type="submit" class="add" name="item<?php echo $row['id']; ?>" value="Add to cart">
+              </form>
+            <?php endif; ?>
+          </div>
+      <?php endif;
+      endforeach; ?>
     </section>
   </main>
 
