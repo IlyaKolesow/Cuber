@@ -61,19 +61,31 @@ include('../Backend/forms.php');
     <h1 class="title">Your shopping cart</h1>
     <?php
     if (isset($_SESSION['user_id'])) {
-      $count = "SELECT count FROM cart WHERE user_id = $_SESSION[user_id]";
-      $count = mysqli_query($cuber, $count);
-      $num_rows = mysqli_num_rows($count);
+      $select_any_row = mysqli_prepare($cuber, "SELECT count FROM cart WHERE user_id = ?");
+      mysqli_stmt_bind_param($select_any_row, 'i', $_SESSION["user_id"]);
+      mysqli_stmt_execute($select_any_row);
+      mysqli_stmt_store_result($select_any_row);
     }
-    if ($num_rows > 0) : ?>
+    if (mysqli_stmt_num_rows($select_any_row) > 0) : ?>
       <section class="cart">
 
         <div class="all-items">
 
           <?php
-          $select = "SELECT * FROM items WHERE id IN (SELECT item_id FROM cart WHERE user_id = $_SESSION[user_id])";
-          $result = mysqli_query($cuber, $select);
-          $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
+          $select = mysqli_prepare($cuber, "SELECT * FROM items WHERE id IN (SELECT item_id FROM cart WHERE user_id = ?)");
+          mysqli_stmt_bind_param($select, 'i', $_SESSION["user_id"]);
+          mysqli_stmt_execute($select);
+          mysqli_stmt_bind_result($select, $item_id, $name, $price, $type);
+          $result = array();
+          while (mysqli_stmt_fetch($select)) {
+            $row = array();
+            $row['id'] = $item_id;
+            $row['name'] = $name;
+            $row['price'] = $price;
+            $row['type'] = $type;
+            $result[] = $row;
+          }
+          mysqli_stmt_close($select);
           foreach ($result as $row) : ?>
 
             <div class="item">
@@ -88,10 +100,11 @@ include('../Backend/forms.php');
               <div class="item__count">
                 <a href="../Backend/update-count.php?operation=minus&item_id=<?php echo $row['id']; ?>" class="item__count_minus">–</a>
                 <?php
-                $count = "SELECT count FROM cart WHERE user_id = $_SESSION[user_id] AND item_id = $row[id]";
-                $count = mysqli_query($cuber, $count);
-                $count = mysqli_fetch_assoc($count);
-                $count = $count['count'];
+                $select_count = mysqli_prepare($cuber, "SELECT count FROM cart WHERE user_id = ? AND item_id = ?");
+                mysqli_stmt_bind_param($select_count, 'ii', $_SESSION["user_id"], $row['id']);
+                mysqli_stmt_execute($select_count);
+                mysqli_stmt_bind_result($select_count, $count);
+                mysqli_stmt_fetch($select_count);
                 $_SESSION['count' . $row['id']] = $count;
                 ?>
                 <input type="number" class="item__count_number" value="<?php echo $_SESSION['count' . $row['id']]; ?>" min="1" max="30"></input>
@@ -99,30 +112,46 @@ include('../Backend/forms.php');
               </div>
             </div>
 
-          <?php endforeach; ?>
+          <?php mysqli_stmt_close($select_count);
+          endforeach;
+          ?>
 
         </div>
         <div class="desc">
           <div class="desc__count-price">
             <?php
-            $total_items = "SELECT SUM(count) AS total_items FROM cart WHERE user_id = $_SESSION[user_id]";
-            $total_items = mysqli_query($cuber, $total_items);
-            $total_items = mysqli_fetch_assoc($total_items);
-            $total_items = $total_items['total_items'];
+            $select_sum = mysqli_prepare($cuber, "SELECT SUM(count) AS total_items FROM cart WHERE user_id = ?");
+            mysqli_stmt_bind_param($select_sum, 'i', $_SESSION["user_id"]);
+            mysqli_stmt_execute($select_sum);
+            mysqli_stmt_bind_result($select_sum, $total_items);
+            mysqli_stmt_fetch($select_sum);
+            mysqli_stmt_close($select_sum);
 
             $discount = 3.56;
             $delivery = "Free";
             $address = "Zubenko Michail, 3, Orshanskaya, Moscow";
 
-            $select = "SELECT item_id, count FROM cart WHERE user_id = $_SESSION[user_id]";
-            $result = mysqli_query($cuber, $select);
-            $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
+            $select = mysqli_prepare($cuber, "SELECT item_id, count FROM cart WHERE user_id = ?");
+            mysqli_stmt_bind_param($select, 'i', $_SESSION["user_id"]);
+            mysqli_stmt_execute($select);
+            mysqli_stmt_bind_result($select, $item_id, $count);
+            $result = array();
+            while (mysqli_stmt_fetch($select)) {
+              $row = array();
+              $row['item_id'] = $item_id;
+              $row['count'] = $count;
+              $result[] = $row;
+            }
+            mysqli_stmt_close($select);
             $start_price = 0;
             foreach ($result as $row) {
-              $select = "SELECT price FROM items WHERE id = $row[item_id]";
-              $price = mysqli_query($cuber, $select);
-              $price = mysqli_fetch_assoc($price);
-              $price = $price['price'] * $row['count'];
+              $select = mysqli_prepare($cuber, "SELECT price FROM items WHERE id = ?");
+              mysqli_stmt_bind_param($select, 'i', $row["item_id"]);
+              mysqli_stmt_execute($select);
+              mysqli_stmt_bind_result($select, $price);
+              mysqli_stmt_fetch($select);
+              mysqli_stmt_close($select);
+              $price = $price * $row['count'];
               $price = $price + $start_price;
               $start_price = $price;
             }
